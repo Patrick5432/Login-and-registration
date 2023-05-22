@@ -1,0 +1,19 @@
+{
+  "name": "login-and-register",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "md5": "^2.3.0",
+    "nodemon": "^2.0.22",
+    "sqlite": "^4.2.0",
+    "sqlite3": "^5.1.6"
+  }
+}
