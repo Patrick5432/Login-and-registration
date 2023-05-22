@@ -25,33 +25,6 @@ open({
     })
 })
 
-//----------------LOGIN--------------------
-
-app.post('/auth/login', jsonParser, (req, res) => {
-
-    const user = req.body
-
-    const loginUser = (dbUser) => {
-        if (dbUser.password === md5(user.password)) {
-            
-            const token = jwt.sign({ id: dbUser.id }, sercet, { 
-                expiresIn: 86400
-            })
-            
-            return res.status(200).json({
-                data: {
-                    user: dbUser,
-                    token
-                }
-            })
-        }
-        return res.status(403).json({
-            error: "Неккоректный логин или пароль"
-        })
-    }
-
-})
-
 //---------------OTHER-------------------
 
 app.listen(3000, () => {
