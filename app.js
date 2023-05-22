@@ -13,13 +13,13 @@ app.get("/", (res, req) => {
 })
 
 open({
-    filename: "./db/login-and-register",
+    filename: "./db/login-and-register.db",
     driver: sqlite3.Database
 }).then((db) => {
-    app.get('/login', async (res, req) => {
+    app.get('/login', async (req, res) => {
         const peoples = await db.all("SELECT * FROM Peoples")
-        console.log("Общращение к бд")
         res.json(peoples)
+        console.log("Общращение к бд")
     })
 })
 
